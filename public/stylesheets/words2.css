@@ -1,0 +1,22 @@
+div#main {
+  background-color:azure;
+}
+div#wordsearch {
+  float:left;
+}
+div#wordData {
+  /**/
+}
+div#wordHeader {
+  /**/
+}
+span.wordMain {
+  padding: 8px;
+}
+button#createWordBtn{
+  visibility: hidden;
+}
+select#wordlist{
+  visibility: hidden;
+}
+div.clear{clear:both;}

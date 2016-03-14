@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>RESTful Words Client</title>
+  <script src="javascripts/wordsclient2.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/words2.css" />
+</head>
+
+<body>
+  <div id="main">
+    <!-- div id="wordcounts"><h4>Count:</h4>
+ Case? <input type="checkbox" name="caseCount" id="caseCount" />
+ <input name="countWord" id="countWord">
+ <ul id="displayCount"></ul>
+</div -->
+
+    <div id="wordsearch">
+      <h4>Search:</h4>
+      <label>Case-sensitive search
+        <input type="checkbox" name="caseSearch" id="caseSearch" />
+      </label>
+      <br />
+      <input name="searchWord" id="searchWord" size="45" type="text" data-threshold="3">
+      <button id="createWordBtn" name="createWordBtn" value="Add Word">Add Word</button>
+      <br />
+      <select id="wordlist" size="10" style="width: 45ex;"></select>
+    </div>
+    <div id="wordData">
+      <div id="wordHeader">
+        <span id="wordIdSpan" class="wordMain"></span>
+        <input id="wordValueField" name="wordValueField" class="wordMain" />
+        <button id="deleteWordBtn" value="Delete">Delete</button>
+        <button id="updateWordBtn" value="Replace">Replace</button><br />
+        <div id="messages"></div>
+      </div>
+      <div id="wordInfo">
+        <div id="twitterDiv">
+          <div id="twitterHead"></div>
+          <div id="twitterList"></div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</body>
+
+</html>
