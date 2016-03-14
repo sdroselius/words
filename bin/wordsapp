@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# chkconfig: 345 99 10
+# description: Dictionary node.js app
+
+nodeDir=/home/ec2-user/Node
+wordsAppDir=$nodeDir/words
+logDir=$wordsAppDir/var/log
+logFile=$logDir/node_log
+prog=wordsapp
+
+start()
+{
+  echo "Starting $prog: "
+  su - ec2-user -c "cd $wordsAppDir && npm start >>$logFile 2>&1 &"
+  RETVAL=$?
+}
+
+stop()
+{
+  echo "Stopping $prog: "
+  pid=`ps -ef|grep words|grep node|cut -d' ' -f2`
+  kill $pid
+  RETVAL=$?
+}
+
+case "$1" in
+  start) start ;;
+  stop) stop ;;
+  *) echo $"Usage: $0 {start|stop}"
+     RETVAL=2
+esac
+exit $RETVAL
